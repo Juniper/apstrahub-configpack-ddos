@@ -37,7 +37,7 @@ echo LICENSE_FILE hash is okay
 
 if printenv GITHUB_REPOSITORY_OWNER > /dev/null
 then
-  if ! egrep "^Copyright \(c\) [0-9]+ $(printenv GITHUB_REPOSITORY_OWNER)$" "$LICENSE_FILE" > /dev/null
+  if ! egrep "^Copyright \(c\) [0-9]+ $(printenv GITHUB_REPOSITORY_OWNER)" "$LICENSE_FILE" > /dev/null
   then
     echo "$LICENSE_FILE must contain a line matching: 'Copyright (c) YYYY $(printenv GITHUB_REPOSITORY_OWNER)'"
     exit 3
