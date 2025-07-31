@@ -1,6 +1,6 @@
 resource "apstra_raw_json" "ddos_service" {
   url = "/api/telemetry-service-registry"
-  id = "DDoS_Protection_Protocols__${var.blueprint_id}"
+  id = "DDoS_Protection_Protocols_${var.blueprint_id}"
   payload = jsonencode(
     {
       description        = "DDOS service registry"
