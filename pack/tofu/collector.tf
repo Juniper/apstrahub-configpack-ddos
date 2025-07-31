@@ -5,7 +5,7 @@ resource "apstra_raw_json" "ddos_collector" {
   url = "/api/telemetry/collectors"
   id = "DDoS_Protection_Protocols"
   payload = jsonencode({
-    service_name = "DDoS_Protection_Protocols",
+    service_name = "DDoS_Protection_Protocols_${var.blueprint_id}",
     collectors = [
       {
         platform = {

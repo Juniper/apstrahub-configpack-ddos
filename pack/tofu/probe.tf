@@ -12,7 +12,7 @@ resource "apstra_raw_json" "ddos_probe" {
         "name": "Extensible Service Collector",
         "type": "extensible_data_collector",
         "properties": {
-        "service_name": "DDoS_Protection_Protocols",
+        "service_name": "DDoS_Protection_Protocols_${var.blueprint_id}",
         "service_interval": "60",
         "value_map": {},
         "graph_query": [
