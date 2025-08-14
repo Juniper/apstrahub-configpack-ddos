@@ -5,14 +5,14 @@ resource "apstra_raw_json" "ddos_probe" {
   url = format("/api/blueprints/%s/probes",var.blueprint_id)
   payload   = <<-EOT
   {
-    "label": "DDOS_Protection_Protocols",
+    "label": "${var.name}",
     "description": "",
     "processors": [
       {
         "name": "Extensible Service Collector",
         "type": "extensible_data_collector",
         "properties": {
-        "service_name": "DDoS_Protection_Protocols_${var.blueprint_id}",
+        "service_name": "${var.name}_${var.blueprint_id}",
         "service_interval": "60",
         "value_map": {},
         "graph_query": [

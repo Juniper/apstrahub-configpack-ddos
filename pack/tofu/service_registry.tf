@@ -1,6 +1,6 @@
 resource "apstra_raw_json" "ddos_service" {
   url = "/api/telemetry-service-registry"
-  id = "DDoS_Protection_Protocols_${var.blueprint_id}"
+  id = "${var.name}_${var.blueprint_id}"
   payload = jsonencode(
     {
       description        = "DDOS service registry"
@@ -33,7 +33,7 @@ resource "apstra_raw_json" "ddos_service" {
             value-type = "aos.sdk.telemetry.schemas.iba_integer_data"
           }
         ],
-        service_name = "DDoS_Protection_Protocols_${var.blueprint_id}",
+        service_name = "${var.name}_${var.blueprint_id}",
         storage_schema_path = "aos.sdk.telemetry.schemas.iba_integer_data",
         telemetry-keys = [
           {
